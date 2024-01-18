@@ -1,0 +1,67 @@
+@use "../../sass/abstracts/colors";
+
+#content {
+  .cart-page {
+    min-height: 100vh;
+    .cart-page-layout {
+      max-width: 1350px;
+      margin: 0 auto;
+      display: grid;
+      .cart-page-layout-left {
+        padding: 1em;
+      }
+      .cart-page-summary {
+        background-color: colors.$grey-400;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        margin-top: 3em;
+        padding: 1em;
+        .cart-page-title { 
+          font-size: 1.5rem;
+        }
+        .cart-page-summary-variables-row,
+        .cart-page-summary-total-row {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          .cart-page-price-text {
+            font-weight: 500;
+          }
+        }
+        .checkout-btn {
+          background-color: colors.$grey-700;
+          color: white;
+          width: 100%;
+          font-weight: 500;
+          padding: .8em 0;
+          cursor: pointer;
+          margin-top: 1em;
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  #content {
+    .cart-page {
+      .cart-page-layout {
+        display: flex;
+        gap: 2em;
+        justify-content: space-between;
+        .cart-page-layout-left {
+          width: 70%;
+        }
+        .cart-page-summary {
+          width: 30%;
+          max-height: 50vh;
+          .checkout-btn {
+            padding: 1em;
+          }
+        }
+      }
+    }
+  }
+}

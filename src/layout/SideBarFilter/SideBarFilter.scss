@@ -1,0 +1,159 @@
+@use "../../sass/abstracts/colors";
+$border-width: 0.5em;
+.sideBar-filter {
+  position: fixed;
+  z-index: 999;
+  min-height: 100vh;
+  width: 100%;
+  top: 0;
+  transition: 390ms ease-out;
+  left: -100%;
+  // margin-top: 1em;
+  background-color: white;
+  .filter-element {
+    padding: 0.8em 1.5em;
+    border-top: $border-width solid colors.$grey-400;
+  }
+  .filter-name {
+    letter-spacing: 0.15em;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin: 0.5em 0 0.8em 0;
+  }
+
+  .sideBar-filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em;
+    .sideBar-filter-header-action-name {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      font-size: 0.8rem;
+      font-weight: 500;
+      img {
+        height: 1.5em;
+      }
+    }
+    .sideBar-filter-closeButton {
+      img {
+        height: 1em;
+      }
+    }
+  }
+  .sideBar-holiday-deals {
+    // width: 100%;
+    // border-top: $border-width solid colors.$grey-400;
+    .holiday-deals-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+      margin-top: 0.5em;
+      .holiday-deal {
+        font-weight: 300;
+        cursor: pointer;
+        font-size: 0.85rem;
+        letter-spacing: 0.03em;
+      }
+    }
+  }
+  .filter-price {
+    width: 100%;
+
+    .filter-price-form {
+      // border-top: $border-width solid colors.$grey-400;
+      display: flex;
+      gap: 0.5em;
+      flex-direction: column;
+      width: 100%;
+      .m-radio {
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.1;
+        display: grid;
+        grid-template-columns: 1em auto;
+        gap: 0.2em;
+        label {
+          font-weight: 300;
+          font-size: 0.8rem;
+          align-self: center;
+        }
+        input[type="radio"] {
+          appearance: none;
+          background-color: #fff;
+          margin: 0;
+          font: inherit;
+          color: currentColor;
+          width: 0.83em;
+          height: 0.83em;
+          border: 1.5px solid colors.$grey-500;
+          border-radius: 50%;
+          display: grid;
+          place-content: center;
+        }
+        input[type="radio"]::before {
+          content: "";
+          width: 0.5em;
+          height: 0.5em;
+          border-radius: 50%;
+          transform: scale(0);
+          transition: 120ms transform ease-in-out;
+          box-shadow: inset 1em 1em black;
+        }
+        input[type="radio"]:checked::before {
+          transform: scale(1);
+        }
+      }
+      .filter-price-range {
+        margin-top: 1.5em;
+        .filter-price-range--row {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1em;
+        }
+        input[type="number"] {
+          border: 1px solid colors.$grey-500;
+          padding: 0.5em 1em;
+          width: 100%;
+        }
+      }
+    }
+  }
+  //animation
+}
+.active {
+  left: 0;
+  transition: 380ms ease-out;
+}
+
+//Media query
+@media screen and (min-width: 960px) {
+  $border-width: 0.1em;
+  .sideBar-filter {
+    position: sticky;
+    left: 0;
+    max-height: 100vh;
+    .sideBar-filter-header {
+      .sideBar-filter-closeButton {
+        display: none;
+      }
+    }
+    .wrapper {
+      overflow-y: scroll;
+    }
+
+    .filter-element {
+      border-top: $border-width solid colors.$grey-400;
+    }
+  }
+
+  .grid-products {
+    margin-top: 4em;
+  }
+
+  .Shop-actions {
+    display: none;
+  }
+}

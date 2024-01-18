@@ -1,0 +1,11 @@
+@use "../abstracts/colors";
+
+.elPreviousPrice {
+  text-decoration: line-through;
+  color: colors.$grey-600;
+}
+
+.elCurrentPrice {
+  color: #ff4400;
+  font-weight: 600;
+}

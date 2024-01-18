@@ -1,0 +1,70 @@
+@use "../../sass/abstracts/colors";
+
+.product-card {
+  position: relative;
+  cursor: pointer;
+  .product-card-wrapper {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-content: space-between;
+    .add-to-cart-btn {
+      bottom: 40%;
+    }
+    &:hover {
+      .add-to-cart-btn {
+        display: block;
+      }
+    }
+    .product-card__top {
+      img {
+        height: 300px;
+        object-fit: contain;
+      }
+    }
+    .product-card__bottom {
+      height: 100%;
+      padding: 0.5em;
+      background-color: colors.$grey-200;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      .product-card__bottom--top,
+      .product-card__bottom--bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        .product-card-price-row {
+          display: flex;
+          gap: 0.5em;
+          .product-card-price--red {
+            color: #ff4400;
+            font-weight: 600;
+          }
+          .product-card-price-previous {
+            text-decoration: line-through;
+            color: colors.$grey-600;
+          }
+        }
+      }
+
+      .product-card-name {
+        font-weight: 500;
+        font-size: 1rem;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2; /* start showing ellipsis when 3rd line is reached */
+        white-space: pre-wrap; /* let the text wrap preserving spaces */
+      }
+
+      .product-card-rating {
+        display: flex;
+      }
+    }
+ 
+  }
+}

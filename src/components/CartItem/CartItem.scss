@@ -1,0 +1,63 @@
+@use "@/sass/abstracts/colors";
+
+.cartItem {
+  margin-top: 5em;
+  .cartItem-wrapper {
+    display: grid;
+    gap: 1.5em;
+    grid-template-columns: 8em 1fr 15%;
+    grid-template-rows: 1fr auto;
+    font-size: 0.8rem;
+    .cartItem-image-wrapper {
+      width: 8em;
+      box-shadow: 0px 0px 20px 2px rgba(0, 0, 0, 0.137);
+      background-color: grey;
+      .cartItem-image {
+        height: 8em;
+      }
+    }
+    .cartItem-title {
+      font-weight: 500;
+    }
+    .cartItem-description {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .cartItem-description__details__modifier {
+        display: flex;
+        & > input {
+          outline: 1px solid colors.$grey-500;
+          margin-right: 1em;
+          width: 2em;
+          min-width: 2em;
+          &:hover {
+            outline: 1px solid black;
+          }
+        }
+        .removeCartItemBtn {
+          border: none;
+          text-decoration: underline;
+        }
+      }
+    }
+    .cartItem-pricing {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      .elCurrentPrice {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+    .cartItem-callouts {
+      border-top: 1px dashed colors.$grey-500;
+      display: grid;
+      grid-row: 2 / 3;
+      grid-column: 2 / 4;
+
+      .cartItem-status-stock {
+        font-weight: 500;
+      }
+    }
+  }
+}

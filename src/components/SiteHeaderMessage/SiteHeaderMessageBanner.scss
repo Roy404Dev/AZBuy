@@ -1,0 +1,21 @@
+@use "../../sass/abstracts/colors.scss";
+
+.header-drawer {
+  background-color: colors.$grey-700;
+
+  .header-drawer__copy {
+    max-width: 1300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0.5em 0;
+    .header-drawer-message {
+      font-family: "Roboto Condensed", sans-serif;
+      color: colors.$color-header-text;
+      font-size: clamp(0.7rem, 2.5vw, 0.8rem);
+      text-align: center;
+      font-weight: 400;
+    }
+  }
+}

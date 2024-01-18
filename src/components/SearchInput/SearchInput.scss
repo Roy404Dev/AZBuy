@@ -1,0 +1,29 @@
+@use "../../sass/abstracts/colors";
+.search-input {
+  font-family: "Roboto", sans-serif;
+  .search-input-wrapper {
+    border: 1px solid colors.$searchInputBorder;
+    display: flex;
+    align-items: center;
+    padding: 0.5em 0.5em 0.5em 1em;
+    border-radius: 5em;
+    gap: 1em;
+    background-color: colors.$grey-bg-200;
+
+    #search-icon-img {
+      height: 1em;
+    }
+    button:focus(:focus-visible) {
+      outline: 2px solid colors.$searchInputBorder;
+    }
+    input {
+      width: 100%;
+      border: none;
+      outline: none;
+      background-color: colors.$grey-bg-200;
+
+      &::placeholder {
+      }
+    }
+  }
+}

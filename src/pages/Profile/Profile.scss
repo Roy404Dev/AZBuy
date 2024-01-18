@@ -1,0 +1,114 @@
+.profile-page {
+  .profile-page-wrapper {
+    .profile-page-title {
+      font-size: clamp(1.5rem, 2vw, 2rem);
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+    .user-profile-dashboard {
+      .user-profile-dashboard__tiles {
+        // display: flex;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        flex-direction: column;
+        gap: 2em;
+        margin-top: 2em;
+
+        .user-profile-dashboard-card {
+          background-color: #f6f6f6;
+          cursor: pointer;
+          padding: 1em;
+          border-radius: 0.3em;
+          transition: box-shadow 350ms ease;
+          .user-profile-dashboard-card-credentials {
+            margin-top: 0.5em;
+            .user-profile-dashboard-card-username {
+              font-weight: 600;
+              line-height: 1.2em;
+              font-size: clamp(1.5rem, 2vw, 2rem);
+            }
+            .user-profile-dashboard-card-email {
+              color: #5a5a5a;
+            }
+            span {
+              display: block;
+            }
+          }
+          &:hover {
+            outline: 1px solid #dcdcdc;
+            box-shadow: 0px 3px 20px -5px hsla(0, 0%, 50%, 0.75);
+          }
+        }
+
+        .user-profile-dashboard-card-wallet {
+          display: flex;
+          justify-content: space-between;
+          .user-profile-dashboard-card-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .wallet-balance {
+              border: 1px solid gray;
+              border-radius: 0.25em;
+              padding: 1em 1.3em;
+              font-size: 2rem;
+            }
+            & > span {
+              font-size: 1.2rem;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .profile-page {
+    .profile-page-wrapper {
+      .user-profile-dashboard {
+        .user-profile-dashboard__tiles {
+          flex-direction: row;
+          grid-template-columns: 1fr 1fr;
+
+          .user-profile-dashboard-card {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .profile-page {
+    width: 100%;
+    .profile-page-wrapper {
+      .user-profile-dashboard {
+        .user-profile-dashboard__tiles {
+          flex-direction: column;
+          .user-profile-dashboard-card {
+            width: 100%;
+          }
+          .user-profile-dashboard-card-member {
+            grid-row: 1 / 3;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .profile-page {
+    width: 100%;
+    .profile-page-wrapper {
+      .user-profile-dashboard {
+        .user-profile-dashboard__tiles {
+          flex-direction: row;
+        }
+      }
+    }
+  }
+}

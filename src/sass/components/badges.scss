@@ -1,0 +1,10 @@
+@use '../abstracts/colors';
+
+.inStockBadge {
+  background-color: colors.$grey-200;
+  border: 1px solid colors.$grey-500;
+  border-radius: 1em;
+  color: colors.$grey-600;
+  padding: 0 .5em;
+  font-size: .85rem;
+}

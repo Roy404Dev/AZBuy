@@ -1,0 +1,28 @@
+.user-account-sidebar {
+  width: 30%;
+  .user-account-sidebar__nav {
+    .user-account-sidebar__nav-el {
+      margin: 1em 0;
+      a {
+        .profile-row {
+          display: flex;
+          align-items: center;
+          gap: 1em;
+        }
+      }
+      .user-account-sidebar-icon {
+        height: 1em;
+        width: 1em;
+      }
+    }
+    .selected {
+      a {
+        span {
+          font-weight: 500;
+          text-decoration: underline;
+          text-underline-offset: 5px;
+        }
+      }
+    }
+  }
+}
