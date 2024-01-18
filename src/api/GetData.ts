@@ -7,6 +7,7 @@ const GetData = (category: string) => {
   let isMounted = true;
 
   useEffect(() => {
+    console.log('call');
     const fetchData = async () => {
       if (isMounted) {
         const querySnapshot = await getDocs(collection(db, category));
