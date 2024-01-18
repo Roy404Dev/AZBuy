@@ -9,7 +9,7 @@ const domain = import.meta.env.AUTH0_BASE_URL;
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Auth0Provider
-      domain={import.meta.env.AUTH0_BASE_URL}
+      domain={clientId && clientId}
       clientId={domain && domain}
       authorizationParams={{
         redirect_uri: window.location.origin,
