@@ -26,6 +26,7 @@ const GridContainer = () => {
         <div className="grid-container-main-col">
           <div className="shopListActions-big-screen">
             <span>Sort items by:</span>
+            <span>HERE {process.env.AUTH0_CLIENT_ID}</span>
             <SelectBox
               values={sortValues}
               setValues={setSortby}
