@@ -14,8 +14,6 @@ import "./ProductCard.scss";
 import useGetImages from "@/hooks/useGetImages";
 import { useAuth0 } from "@auth0/auth0-react";
 import AddItem from "@/api/AddItem";
-//TODO style card correctly
-
 
 const ProductCard = ({
   title,
@@ -31,7 +29,6 @@ const ProductCard = ({
   const downloadedImg = useGetImages(image);
   const starCount = 5;
   const { user } = useAuth0();
-
   const addProductToCart = () => {
     AddItem("cart", { productId: productId, userId: user?.sub });
   };

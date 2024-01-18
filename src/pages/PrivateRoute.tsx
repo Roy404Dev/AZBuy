@@ -7,9 +7,9 @@ type ChildrenProp = {
 };
 
 const PrivateRoute = ({ children }: ChildrenProp) => {
-  const { isAuthenticated } = useAuth0();
+  const { user } = useAuth0();
   const [loading, setLoading] = useState(true);
-
+  const adminSub = process.env.ADMIN_SUB;
   useEffect(() => {
     const checkAuthentication = async () => {
       await new Promise((resolve) => setTimeout(resolve, 1000));
@@ -26,7 +26,7 @@ const PrivateRoute = ({ children }: ChildrenProp) => {
   }
 
   // If not authenticated, redirect to login page or another route
-  if (!isAuthenticated) {
+  if (user?.sub != adminSub) {
     return <Navigate to="/" />;
   }
 

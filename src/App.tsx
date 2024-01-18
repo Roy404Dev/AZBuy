@@ -12,6 +12,7 @@ import CartPage from "./pages/Cart/CartPage";
 import { QueryClient, QueryClientProvider } from "react-query";
 import PrivateRoute from "./pages/PrivateRoute";
 // TODO ADD VIEW PRODUCT
+
 const router = createBrowserRouter([
   {
     path: "/",
