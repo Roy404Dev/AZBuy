@@ -10,7 +10,7 @@ import UserPage from "./pages/UserPage/UserPage";
 import Orders from "./pages/Orders/Orders";
 import CartPage from "./pages/Cart/CartPage";
 import { QueryClient, QueryClientProvider } from "react-query";
-
+import PrivateRoute from "./pages/PrivateRoute";
 // TODO ADD VIEW PRODUCT
 const router = createBrowserRouter([
   {
@@ -52,7 +52,11 @@ const router = createBrowserRouter([
 
   {
     path: "admin",
-    element: <AdminPage />,
+    element: (
+      <PrivateRoute>
+        <AdminPage />
+      </PrivateRoute>
+    ),
   },
   {
     path: "login",
