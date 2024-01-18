@@ -10,9 +10,8 @@ import useGetData from "@/hooks/useGetData";
 import { useAuth0 } from "@auth0/auth0-react";
 const HeaderDashboard = () => {
   const { toggleMenu, setToggleMenu } = useData();
-  const { user, isAuthenticated } = useAuth0();
+  const { user, isAuthenticated, loginWithRedirect } = useAuth0();
   const { data } = useGetData("cart", "userId", user?.sub);
-  const { loginWithRedirect } = useAuth0();
   //TODO add quantity
   return (
     <div className="Site-Header-Dashboard">
