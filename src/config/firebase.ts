@@ -6,7 +6,7 @@ import { getFirestore } from "firebase/firestore";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDRb0bYxXxWl44GjI7HweLZGJ_XIMOdjAg",
+  apiKey: process.env.FIREBASE_API_KEY,
   authDomain: "azbuy-42a89.firebaseapp.com",
   projectId: "azbuy-42a89",
   storageBucket: "azbuy-42a89.appspot.com",
