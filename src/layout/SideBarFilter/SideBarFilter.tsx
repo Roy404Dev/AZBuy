@@ -105,6 +105,7 @@ const SideBarFilter = () => {
                   type="number"
                   placeholder="min"
                   name="min"
+                  min={0}
                   onChange={(e) => handleRangeValues(e)}
                 />
                 <span>to</span>
@@ -112,6 +113,7 @@ const SideBarFilter = () => {
                   type="number"
                   placeholder="max"
                   name="max"
+                  min={0}
                   onChange={(e) => handleRangeValues(e)}
                 />
               </div>

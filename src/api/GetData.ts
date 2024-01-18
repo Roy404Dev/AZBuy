@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 
 const GetData = (category: string) => {
   const [data, setData] = useState<DocumentData[]>();
+  let isMounted = true;
+
   useEffect(() => {
-    let isMounted = true;
     const fetchData = async () => {
-      if (!isMounted) {
+      if (isMounted) {
         const querySnapshot = await getDocs(collection(db, category));
         const serverData = querySnapshot.docs.map((doc) => ({
           ...doc.data(),
@@ -15,12 +16,15 @@ const GetData = (category: string) => {
         }));
         setData(serverData);
       }
-      fetchData();
     };
+
+    fetchData();
+
     return () => {
       isMounted = false;
     };
   }, []);
+
   return { data };
 };
 

@@ -4,7 +4,7 @@ import useData from "@/hooks/useData";
 import GetData from "@/api/GetData";
 const Categories = () => {
   const { toggleMenu, setToggleMenu } = useData();
-  const {data} = GetData("categories");
+  const { data } = GetData("categories");
   return (
     <ul className="header-categories">
       {data &&
