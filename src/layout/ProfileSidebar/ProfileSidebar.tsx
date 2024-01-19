@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import "./ProfileSidebar.scss";
 import { useState } from "react";
+import userIcon from "@/ui/icons/userIcon.svg";
+import profileIcon from "@/ui/icons/profileIcon.svg";
+
 const ProfileSidebar = () => {
   const [selected, setSelected] = useState(0);
   return (
@@ -15,7 +18,7 @@ const ProfileSidebar = () => {
           <Link to="profile">
             <div className="profile-row">
               <img
-                src="./src/ui/icons/profileIcon.svg"
+                src={profileIcon}
                 className="user-account-sidebar-icon"
                 alt="profile icon"
               />
@@ -31,9 +34,8 @@ const ProfileSidebar = () => {
         >
           <Link to="orders">
             <div className="profile-row">
-
               <img
-                src="./src/ui/icons/userIcon.svg"
+                src={userIcon}
                 className="user-account-sidebar-icon"
                 alt="orders icon"
               />
