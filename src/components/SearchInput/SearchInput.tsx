@@ -3,6 +3,7 @@ import "./SearchInput.scss";
 import useData from "@/hooks/useData";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "@/config/firebase";
+import chevronRight from "../../ui/icons/arrows/chevron-right.svg";
 const SearchInput = () => {
   const { priceRange } = useData();
 
@@ -12,7 +13,7 @@ const SearchInput = () => {
     where("currentPrice", ">", priceRange[0]),
     where("currentPrice", "<", priceRange[1]),
     where("title", ">=", search),
-    where("title", "<=", search + "\uf8ff"),
+    where("title", "<=", search + "\uf8ff")
   );
   const onSearch = async () => {
     try {
@@ -37,7 +38,7 @@ const SearchInput = () => {
           placeholder="Search. Explore. Discover"
           onChange={(e) => setSearch(e.target.value)}
         />
-        <button onClick={() => onSearch()}>submit</button>
+        <button onClick={() => onSearch()}><img className="submitArrowBtn" src={chevronRight}/></button>
       </div>
     </div>
   );
