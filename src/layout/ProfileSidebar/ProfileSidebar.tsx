@@ -15,7 +15,7 @@ const ProfileSidebar = () => {
           <Link to="profile">
             <div className="profile-row">
               <img
-                src="/src/ui/icons/profileIcon.svg"
+                src="./src/ui/icons/profileIcon.svg"
                 className="user-account-sidebar-icon"
                 alt="profile icon"
               />
@@ -33,7 +33,7 @@ const ProfileSidebar = () => {
             <div className="profile-row">
 
               <img
-                src="/src/ui/icons/userIcon.svg"
+                src="./src/ui/icons/userIcon.svg"
                 className="user-account-sidebar-icon"
                 alt="orders icon"
               />
